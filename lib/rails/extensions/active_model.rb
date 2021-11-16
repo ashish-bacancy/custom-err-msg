@@ -17,9 +17,9 @@ module ActiveModel
           
           messages.each do |m|
             if m =~ /^\^/
-              full_messages << I18n.t(:"errors.format.full_message", options.merge(:message => m[1..-1], :default => "%{message}"))
+              full_messages << I18n.t(:"errors.format.full_message", **options.merge(:message => m[1..-1], :default => "%{message}"))
             else        
-              full_messages << I18n.t(:"errors.format", options.merge(:message => m))
+              full_messages << I18n.t(:"errors.format", **options.merge(:message => m))
             end
           end
         end
